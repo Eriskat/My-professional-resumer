@@ -1,7 +1,8 @@
 name: My first pipeline
 
 on:
-    push: [main]
+    push:   
+        branches: ["main"]
 
 jobs:  
     build:
@@ -18,5 +19,5 @@ jobs:
             username: ${{ eriska1}}
             password: ${{ secrets.DOCKER_PASSWORD }}
         - name: Push image
-        run: |
+          run: |
             docker push eriska1/cicd-portfolio:latest
